@@ -1,11 +1,15 @@
-'use strict';
+ 
 const mongoose=require('mongoose');
-const winston=require('winston');
 module.exports = () => {
-    mongoose.connect('mongodb://localhost/WAMIA',{
-        useNewUrlParser:true,
-        useFindAndModify:true,
-        useUnifiedTopology:true,
-        useCreateIndex:true
-    }).then(()=>winston.info('Mongo db Connected.....'));
+ 
+mongoose
+.connect('mongodb://localhost:27017/test',  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  }
+)
+.then(() => console.log("Connected to MongoDB"))
+.catch((err) => console.log("Failed to connect to MongoDB", err));
 }
