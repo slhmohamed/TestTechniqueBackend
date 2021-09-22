@@ -6,7 +6,7 @@ const { getAllMatch} = require('../controllers/teams.controller');
 const router =express.Router();
  
 
-router.get('/getAllMatch',getAllMatch)
+router.get('/aggregation',getAllMatch)
 
  
 module.exports={

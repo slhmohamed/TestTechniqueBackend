@@ -11,8 +11,14 @@ const matcheSchema=mongoose.Schema({
 
   teams:{
       type:[{
-          home:String,
-          away:String
+          home:{
+            type:mongoose.Schema.Types.ObjectId,
+            ref: "matches"
+          },
+          away:{
+            type:mongoose.Schema.Types.ObjectId,
+            ref: "matches"
+          },
         }
       ]
   },
